@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selviana Aprilia - Dark Mode Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    
+    <style>
+        /* --- CSS Internal for Dark Mode Neon Design --- */
+        
+        /* Reset and Base Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-neon: #00ffff;    /* Cyan Neon */
+            --secondary-dark: #1f2833;  
+            --background-black: #131313; 
+            --text-light: #e0f7fa;      
+            --text-muted: #80ced6;      
+            --card-bg: #1c232d;         
+            --border-radius-card: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6;
+            color: var(--text-light);
+            background-color: var(--background-black); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 30px 20px;
+            overflow-x: hidden; 
+        }
+
+        /* Main Container: Card with Light Effect */
+        .profile-container {
+            max-width: 700px;
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: var(--border-radius-card);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.2); 
+            border: 1px solid rgba(0, 255, 255, 0.3); 
+            padding: 50px;
+            position: relative;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        /* Fade In Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Neon Divider */
+        .divider {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--primary-neon), transparent);
+            opacity: 0.5;
+            margin: 40px 0;
+        }
+
+        /* Header (Photo & Name) */
+        .header-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-photo {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%; 
+            border: 6px solid var(--primary-neon); 
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px var(--primary-neon), 0 0 25px var(--primary-neon); 
+            transition: transform 0.4s ease-in-out;
+        }
+        
+        .profile-photo:hover {
+            transform: scale(1.05); 
+            box-shadow: 0 0 20px var(--primary-neon), 0 0 35px var(--primary-neon); 
+        }
+        
+        h1 {
+            font-size: 3.2em; 
+            margin-bottom: 5px;
+            color: var(--text-light);
+            font-weight: 900; 
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.6); 
+        }
+
+        h2 {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: var(--primary-neon); 
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 25px;
+        }
+
+        .content-section h3 {
+            font-size: 1.8em; 
+            color: var(--primary-neon);
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .content-section p {
+            font-size: 1.1em; 
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        /* Skill List Style */
+        .skill-list {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-list li {
+            background-color: var(--secondary-dark);
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--text-light);
+            border-left: 4px solid var(--primary-neon);
+            transition: background-color 0.3s;
+        }
+
+        .skill-list li:hover {
+            background-color: #2a3440;
+        }
+        
+        .skill-list i {
+            margin-right: 10px;
+            color: var(--primary-neon);
+        }
+        
+        /* Download Link Style */
+        .download-container {
+            text-align: center;
+            padding: 30px;
+            background: var(--secondary-dark); 
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+        }
+        
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            background: var(--primary-neon);
+            color: var(--background-black); 
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 50px; 
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            box-shadow: 0 0 10px var(--primary-neon), 0 0 20px var(--primary-neon); 
+            border: none;
+        }
+
+        .download-button:hover {
+            background: var(--text-light);
+            transform: scale(1.05);
+            box-shadow: 0 0 15px var(--text-light), 0 0 30px var(--text-light);
+        }
+
+        .download-button i {
+            margin-right: 10px;
+            font-size: 1.3em;
+            color: var(--background-black);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-container { padding: 40px 30px; }
+            h1 { font-size: 2.8em; }
+            h2 { font-size: 1.1em; letter-spacing: 2px; }
+            .profile-photo { width: 120px; height: 120px; }
+        }
+        @media (max-width: 480px) {
+            .profile-container { padding: 30px 20px; }
+            h1 { font-size: 2.2em; }
+            h2 { font-size: 0.9em; }
+            .content-section p { text-align: left; }
+            .download-button { padding: 12px 20px; font-size: 1em; }
+            .skill-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="profile-container">
+        
+        <div class="header-section">
+            <img src="foto.jpeg" alt="Selviana Aprilia Profile Photo" class="profile-photo">
+            
+            <h1>Selviana Aprilia</h1>
+            <h2>Pharmacy Student | Esa Unggul University</h2>
+        </div>
+
+        <div class="content-section">
+            <h3>About Me</h3>
+            <p>Hello, my name is Selviana Aprilia. I am a Pharmacy student at Esa Unggul University</p>
+            <p>I have a strong interest in the field of health, particularly in the development of pharmaceutical sciences. I am committed to continuously deepening my knowledge and enhancing my skills in order to become a competent pharmacy professional. For me, a pharmacist is not only required to possess academic knowledge but also practical skills and professional attitude. Therefore, I consistently strive to develop myself through classroom learning, research, and practical experiences related to the health field.</p>
+            <p>Beyond academics, I also enjoy taking on new challenges, such as training programs and social activities, which allow me to broaden my experience, expand my network, and enrich my perspective.</p>
+            <p>Through this ePortfolio, I would like to showcase my learning journey and personal growth as part of my process of becoming a dedicated and professional pharmacist with integrity.</p>
+        </div>
+        
+        <div class="divider"></div>
+
+        <div class="content-section">
+            <h3>About This E-portofolios</h3>
+            <p>This e-Portfolio is created as a medium to showcase my academic and professional journey. It highlights my skills, experiences, and achievements that I have accomplished so far. Designed to present my educational background, projects, and various activities, this portfolio reflects both my personal growth and potential. Through this platform, I aim to provide a clear picture of who I am, what I have done, and the goals I aspire to achieve in the future.</p>
+            <p>More than just a requirement for academics or career purposes, this portfolio also serves as a space for reflection and continuous self-development. For lecturers, supervisors, colleagues, or anyone interested in my work, I hope this portfolio offers valuable insights into my journey and the contributions I am able to bring.</p>
+           
+        </div>
+        
+        <div class="divider"></div>
+
+        <div class="content-section">
+            <h3>Goals Of This Course</h3>
+            <p>My main goal in taking the English Course 3 is to improve my overall English proficiency, particularly in terms of speaking fluency, communication skills, and practical application in the workplace. I want to become more confident and effective in using English, both in spoken and written forms.</p>
+            <p>I hope to gain a deeper understanding of the language, enhance my ability to express ideas clearly, and be able to apply the knowledge I acquire in real-life situations, especially in academic and professional settings.</p>
+            <p>In addition, I also expect this course to help me broaden my knowledge, strengthen my critical thinking skills, and add more value to my personal development in the future. With good English skills, I believe I will be better prepared to face global challenges and make a broader contribution in the field of health and the pharmacy profession.</p>
+        
+        </div>
+        
+        <div class="divider"></div>
+
+        <div class="content-section">
+            <h3>Assigment</h3>
+            
+            <div class="download-container">
+                <p style="margin-bottom: 20px; color: var(--text-light); font-weight: 600;">Download the full document</p>
+                
+                <a href="assigment.pdf" download class="download-button">
+                    <i class="fas fa-arrow-down"></i> Click Here (PDF)
+                </a>
+            </div>
+        
+        </div>
+        
+    </main>
+    
+</body>
+</html>
